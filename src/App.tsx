@@ -1,3 +1,11 @@
+/*
+ * @Author: qiulin qiulin@smm.cn
+ * @Date: 2025-09-24 10:49:59
+ * @LastEditors: qiulin qiulin@smm.cn
+ * @LastEditTime: 2025-09-24 12:21:12
+ * @FilePath: /lx-teaching-case/src/App.tsx
+ * @Description: 
+ */
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -19,7 +27,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          count1111 is {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
