@@ -44,7 +44,7 @@ function App() {
     src: chen
   },
   {
-    name: ' 森',
+    name: '森',
     src: sen
   },
   {
@@ -56,13 +56,25 @@ function App() {
   return (
     <div>
       <p style={{fontSize:30}}>文字起源</p>
-      <div style={{ fontSize: '40px', fontWeight: '600' }}>{`"${ qrCodeArr[index].name}"`}</div>
+      <div style={{ fontSize: '100px', fontWeight: '600' }}>{`"${ qrCodeArr[index].name}"`}</div>
       <p>扫描二维码播放视频</p>
       <img src={qrCodeArr[index].src} style={{ width: '300px', height: '300px' }}></img>
      
       <div className='btn'>
-        <div className='btn-item' onClick={() => setIndex(index - 1)}>上一张</div>
-        <div className='btn-item' onClick={() => setIndex(index + 1)}>下一张</div>
+        <div className='btn-item' onClick={() => {
+          if(index > 0){
+            setIndex(index - 1)
+          }else{
+            setIndex(qrCodeArr.length - 1)
+          }
+        }}>上一张</div>
+        <div className='btn-item' onClick={() => {
+          if(index < qrCodeArr.length - 1){
+            setIndex(index + 1)
+          }else{
+            setIndex(0)
+          }
+        }}>下一张</div>
       </div>
     </div>
   )
