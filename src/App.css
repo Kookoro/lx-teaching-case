@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+
+}
+.btn-item{
+  width: 100px;
+  height: 30px;
+  background-color: #61dafbaa;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}

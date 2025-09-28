@@ -6,15 +6,66 @@
  * @FilePath: /lx-teaching-case/src/App.tsx
  * @Description: 
  */
+import { useState } from 'react'
 import './App.css'
-import logo from './assets/qrcode.png'
+
+import cong from './assets/cong.png'
+import ming from './assets/ming.png'
+import lin from './assets/lin.png'
+import nan from './assets/nan.png'
+import jian from './assets/jian.png'
+import chen from './assets/chen.png'
+import sen from './assets/sen.png'
+import zhong from './assets/zhong.png'
+
 
 function App() {
+  const [qrCode, setQrCode] = useState({
+    name: '从',
+    src: cong
+  })
+  const qrCodeArr = [{
+    name: '从',
+    src: cong
+  }, {
+    name: '明',
+    src: ming
+  }, {
+    name: '林',
+    src: lin
+  },{
+    name: '男',
+    src: nan
+  },
+  {
+    name: '尖',
+    src: jian
+  },
+  {
+    name: '尘',
+    src: chen
+  },
+  {
+    name: ' 森',
+    src: sen
+  },
+  {
+    name: '众',
+    src: zhong
+  },
+]
 
   return (
     <div>
+      <p style={{fontSize:30}}>文字起源</p>
+      <div style={{ fontSize: '40px', fontWeight: '600' }}>{`"${qrCode.name}"`}</div>
       <p>扫描二维码播放视频</p>
-      <img src={logo}></img>
+      <img src={qrCode.src} style={{ width: '300px', height: '300px' }}></img>
+     
+      <div className='btn'>
+        <div className='btn-item' onClick={() => setQrCode(qrCodeArr[qrCodeArr.length - 1])}>上一张</div>
+        <div className='btn-item' onClick={() => setQrCode(qrCodeArr[1])}>下一张</div>
+      </div>
     </div>
   )
 }
