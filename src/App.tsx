@@ -20,10 +20,8 @@ import zhong from './assets/zhong.png'
 
 
 function App() {
-  const [qrCode, setQrCode] = useState({
-    name: '从',
-    src: cong
-  })
+
+  const [index, setIndex] = useState(0)
   const qrCodeArr = [{
     name: '从',
     src: cong
@@ -58,13 +56,13 @@ function App() {
   return (
     <div>
       <p style={{fontSize:30}}>文字起源</p>
-      <div style={{ fontSize: '40px', fontWeight: '600' }}>{`"${qrCode.name}"`}</div>
+      <div style={{ fontSize: '40px', fontWeight: '600' }}>{`"${ qrCodeArr[index].name}"`}</div>
       <p>扫描二维码播放视频</p>
-      <img src={qrCode.src} style={{ width: '300px', height: '300px' }}></img>
+      <img src={qrCodeArr[index].src} style={{ width: '300px', height: '300px' }}></img>
      
       <div className='btn'>
-        <div className='btn-item' onClick={() => setQrCode(qrCodeArr[qrCodeArr.length - 1])}>上一张</div>
-        <div className='btn-item' onClick={() => setQrCode(qrCodeArr[1])}>下一张</div>
+        <div className='btn-item' onClick={() => setIndex(index - 1)}>上一张</div>
+        <div className='btn-item' onClick={() => setIndex(index + 1)}>下一张</div>
       </div>
     </div>
   )
